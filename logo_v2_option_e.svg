@@ -13,8 +13,8 @@
   <!-- <text x="20" y="50" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#64748B" letter-spacing="3">STARTUP MP PRESENTS</text> -->
   
   <!-- Main HACK&MAKE -->
-  <text x="20" y="100" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" letter-spacing="-2">
-    <tspan fill="#fff">HACK</tspan><tspan fill="#C41E3A" font-size="42">&amp;</tspan><tspan fill="#fff">MAKE</tspan>
+  <text x="10" y="100" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" letter-spacing="-2">
+    <tspan fill="#fff">HACK</tspan><tspan fill="#C41E3A" font-size="42">&amp;</tspan><tspan fill="#fff">MAKE</tspan> <tspan fill="#C41E3A" font-size="42">/ &gt;</tspan>
   </text>
   
   <!-- Tagline in code style -->
