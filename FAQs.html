@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Startup MP: Hack&Make 2026</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#050505',
+                            pink: '#be185d',
+                            purple: '#7e22ce',
+                            accent: '#f43f5e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #be185d; }
+
+        /* HERO BACKGROUND */
+        .hero-bg {
+            background: radial-gradient(circle at center, transparent 0%, #050505 100%),
+                repeating-linear-gradient(90deg, #000 0px, #000 2px, transparent 2px, transparent 40px),
+                linear-gradient(180deg, #000 0%, #3a0ca3 100%);
+            background: linear-gradient(180deg, #070707 0%, #5f76eb 40%, #1c181e 100%);
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #7474cb, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Search Input Focus */
+        input:focus {
+            outline: none;
+            border-color: #a855f7;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Accordion Active State */
+        .faq-item.active {
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .faq-item.active i {
+            transform: rotate(180deg);
+            color: #a855f7;
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen flex flex-col">
+
+    <div class="hero-bg"></div>
+    <div class="fixed top-1/4 left-10 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob pointer-events-none"></div>
+    <div class="fixed bottom-1/3 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 glass-card py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="./logo_v2_option_e.svg" class="tracking-tighter" height="20px" width="150px" alt="Startup MP"/>
+                </a>
+                <div class="hidden md:flex gap-6">
+                      <div>
+                    <a href="/register.html"
+                        class="bg-purple-800 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(190,24,93,0.5)]">
+                        Register Now
+                    </a>
+                </div>
+                    <a href="#" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="text-center mb-16" data-aos="fade-down">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-400 uppercase bg-purple-500/10 rounded-full border border-purple-500/20">
+                    Support Center
+                </div>
+                <h1 class="text-4xl md:text-6xl font-display font-bold mb-6">Frequently Asked <span class="text-gradient">Questions</span></h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Everything you need to know about the innovation sprint. Click on a question to reveal the answer.</p>
+            
+                <div class="mt-10 max-w-xl mx-auto relative group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-search text-gray-500 group-focus-within:text-purple-400 transition-colors"></i>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Search questions (e.g., 'food', 'team', 'hardware')..." 
+                        class="w-full bg-black/40 border border-white/10 rounded-full pl-12 pr-6 py-4 text-white placeholder-gray-600 backdrop-blur-md focus:bg-black/60 transition-all shadow-lg">
+                </div>
+            </div>
+
+            <div id="faqList" class="space-y-4">
+                
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="0">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Who can participate?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Anyone! College students (any branch), working professionals, startups, MSMEs, artisans — all are welcome. No pre-screening required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="50">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Is there a registration fee?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            No. Registration is completely <span class="text-green-400 font-semibold">FREE</span> for all participants.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Do I need to have a team?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Teams of 2-5 members are recommended, but solo participation is allowed. Don't have a team? We'll help you find one at the venue!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Which track should I choose?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            <ul class="space-y-2 list-disc list-inside">
+                                <li><strong class="text-purple-400">Code It:</strong> If you're building software, apps, or AI solutions.</li>
+                                <li><strong class="text-blue-400">Build It:</strong> If you're creating hardware, devices, or physical prototypes.</li>
+                                <li><strong class="text-pink-400">Ship It:</strong> If you're solving business, export, or market access problems.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Do I need to have an idea before coming?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Not mandatory! Problem statements will be revealed at the opening ceremony. But if you have an idea, feel free to start working on it.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">What should I bring?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Your laptop, charger, and enthusiasm! For Makeathon (Build It) participants, basic hardware kits will be provided. You can also bring your own components.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Will food be provided?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Yes! Breakfast, lunch, snacks, and dinner will be provided to all registered participants.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="350">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Can startups showcase their existing products?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Absolutely! The "Open Innovation" category in each track welcomes existing startup products. This is a great opportunity for visibility and investor connect.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">What happens to winning solutions?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            Winners get cash prizes, incubation support, and potential pilot projects with government/corporates. Some solutions may be adopted for state-wide implementation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="450">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Is accommodation provided?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            No, but we can share a list of nearby budget hotels for outstation participants.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                    <button class="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="text-lg font-display font-bold text-white">Can I participate in multiple tracks?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5 mt-2">
+                            No, each team can register for only one track.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="noResults" class="hidden text-center py-20">
+                <div class="text-6xl mb-4">🤔</div>
+                <h3 class="text-xl font-bold text-white">No questions found</h3>
+                <p class="text-gray-400">Try searching for something else.</p>
+            </div>
+
+            <div class="mt-20 text-center">
+                <p class="text-gray-400 mb-6">Still have questions?</p>
+                
+                <a href="register.html" class="ml-4 inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold px-8 py-3 rounded-xl shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all">
+                    Register Now <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 bg-black py-8 mt-auto">
+        <div class="text-center text-gray-600 text-sm">
+            <p>&copy; 2025 Startup MP.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // --- ACCORDION LOGIC ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            const answer = item.querySelector('.faq-answer');
+
+            button.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Option 1: Accordion Style (Close others when one opens)
+                // Remove comment below to enable "Only one open at a time"
+                /*
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                });
+                */
+
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.classList.add('active');
+                    // Calculate height for smooth animation
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // --- SEARCH LOGIC ---
+        const searchInput = document.getElementById('searchInput');
+        const faqList = document.getElementById('faqList');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            let visibleCount = 0;
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('button span').innerText.toLowerCase();
+                const answer = item.querySelector('.faq-answer div').innerText.toLowerCase();
+                
+                if (question.includes(term) || answer.includes(term)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+                faqList.classList.add('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                faqList.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

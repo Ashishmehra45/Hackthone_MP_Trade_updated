@@ -102,37 +102,46 @@
 
 <body class="relative">
 
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 flex justify-between gap-2">
-                    <!-- <a href="#" class="font-display font-bold text-2xl tracking-tighter">
-                        STARTUP<span class="text-pink-500">MP</span>
-                    </a> -->
-                    <img src="./logo_v2_option_e.svg" class="tracking-tighter" height="20px" width="150px" />
-                    <!-- <img src="./2.png"  class="tracking-tighter" style="aspect-ratio: 1;" height="20px" width="60   px"/> -->
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-6 flex items-baseline space-x-8">
-                        <a href="#about"
-                            class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#tracks"
-                            class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Tracks</a>
-                        <a href="#prizes"
-                            class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
-                        <a href="#schedule"
-                            class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Schedule</a>
-                    </div>
-                </div>
-                <div>
-                    <a href="/register.html"
-                        class="bg-purple-800 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(190,24,93,0.5)]">
-                        Register Now
-                    </a>
+   <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <div class="flex-shrink-0 flex justify-between gap-2">
+                <img src="./logo_v2_option_e.svg" class="tracking-tighter" height="20px" width="150px" />
+            </div>
+
+            <div class="hidden md:block">
+                <div class="ml-6 flex items-baseline space-x-8">
+                    <a href="#about" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="#tracks" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Tracks</a>
+                    <a href="#prizes" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Prizes</a>
+                    <a href="#schedule" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Schedule</a>
+                    <a href="./FAQs.html" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">FAQs</a>
                 </div>
             </div>
+
+            <div class="flex items-center gap-4">
+                <a href="/register.html"
+                    class="bg-purple-800 hover:bg-blue-700 text-white px-4 py-2 md:px-6 md:py-2 text-sm md:text-base rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(190,24,93,0.5)]">
+                    Register
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
-    </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute top-20 left-0 w-full transition-all duration-300">
+        <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col items-center">
+            <a href="#about" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">About</a>
+            <a href="#tracks" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Tracks</a>
+            <a href="#prizes" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Prizes</a>
+            <a href="#schedule" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Schedule</a>
+            <a href="./FAQs.html" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">FAQs</a>
+        </div>
+    </div>
+</nav>
 
     <section class="relative min-h-auto flex items-center justify-center pt-20 overflow-hidden">
         <div class="hero-bg"></div>
@@ -239,22 +248,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl font-display font-bold mb-6">A One-Day Intensive <br><span
+                    <h2 class="text-4xl font-display font-bold mb-6">Madhya Pradesh's flagship <br><span
                             class="text-gradient">Innovation Sprint</span></h2>
                     <p class="text-gray-400 mb-6 leading-relaxed">
-                        Startup MP: Hack&Make 2026 brings together students, developers, makers, and startups to build
+                         Hack&Make 2026 brings together students, developers, makers, and startups to build
                         real solutions for real problems. Preceding the Startup MP Summit, this event positions Madhya
                         Pradesh as a leading innovation hub.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-gray-300">
-                            <i class="fa-solid fa-check-circle text-blue-500"></i> Open to Students, Pros & Startups
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Open to Students, Working Professionals, Artisans & ODOP Producers, Individual Innovators & Startups
                         </li>
                         <li class="flex items-center gap-3 text-gray-300">
                             <i class="fa-solid fa-check-circle text-blue-500"></i> No Pre-screening Required
                         </li>
                         <li class="flex items-center gap-3 text-gray-300">
                             <i class="fa-solid fa-check-circle text-blue-500"></i> Direct Entry to Summit Pitch Stage
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Registration is FREE !
                         </li>
                     </ul>
                 </div>
@@ -265,7 +277,7 @@
                     <div class="relative glass-card p-8 rounded-2xl border-l-4 border-blue-500">
                         <div class="grid grid-cols-2 gap-8">
                             <div class="text-center">
-                                <h3 class="text-4xl font-bold text-white">₹9L+</h3>
+                                <h3 class="text-4xl font-bold text-white">₹25L+</h3>
                                 <p class="text-sm text-gray-400 mt-2">Cash Prize Pool</p>
                             </div>
                             <div class="text-center">
@@ -290,8 +302,8 @@
     <section id="tracks" class="py-20 bg-[#0a0a0a] relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-display font-bold mb-4">Choose Your Battlefield</h2>
-                <p class="text-gray-400">Three parallel tracks. One goal: Innovation.</p>
+                <h2 class="text-4xl font-display font-bold mb-4">Choose Your Track</h2>
+                <p class="text-gray-400">Three ways to innovate. One goal — Build for Madhya Pradesh</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -303,7 +315,7 @@
                         <!-- <i class="ri-computer-fill text-2xl text-pink-500 group-hover:text-white"></i> -->
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Track 1: CODE IT</h3>
-                    <p class="text-blue-400 text-sm font-mono mb-4 uppercase tracking-widest">Hackathon — Software /
+                    <p class="text-blue-400 text-sm  mb-4 uppercase tracking-widest">Hackathon — Software /
                         Apps / AI</p>
                     <p class="text-gray-400 text-sm mb-6">Build any digital solution that makes life better for MP's
                         citizens, farmers, students, or cities.</p>
@@ -334,9 +346,9 @@
                         <i class="fa-solid fa-microchip text-2xl text-purple-500 group-hover:text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Track 2: BUILD IT</h3>
-                    <p class="text-purple-400 text-sm font-mono mb-4 uppercase tracking-widest">The Makeathon</p>
+                    <p class="text-purple-400 text-sm  mb-4 uppercase tracking-widest">Makeathon — Hardware / Devices / Prototypes</p>
                     <p class="text-gray-400 text-sm mb-6">Create any device or prototype that solves a real problem for
-                        MP's farms, homes, or cities..</p>
+                        MP's farms, homes, or cities.</p>
                     <ul class="text-sm text-gray-500 space-y-2 mb-6">
                         <h1 class="text-purple-400">What You Can Build:</h1>
                         <li>• IoT devices & sensors</li>
@@ -365,7 +377,7 @@
                         <i class="fa-solid fa-ship text-2xl text-blue-500 group-hover:text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Track 3: SHIP IT</h3>
-                    <p class="text-blue-400 text-sm font-mono mb-4 uppercase tracking-widest">Export/ODOP</p>
+                    <p class="text-blue-400 text-sm  mb-4 uppercase">Export / ODOP — Business / Market-Ready Solutions</p>
                     <p class="text-gray-400 text-sm mb-6">Develop any solution that helps MP's products, businesses, or
                         artisans reach more markets.</p>
                     <ul class="text-sm text-gray-500 space-y-2 mb-6">
@@ -398,7 +410,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-display font-bold mb-4">Rewards & Recognition</h2>
-                <p class="text-gray-400">Total Cash Pool + Incubation worth ₹50 Lakhs+</p>
+                <p class="text-gray-400">Over ₹25 Lakh in prizes, incubation support, and real business opportunities</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -421,13 +433,13 @@
                                 <td class="p-4 font-bold text-white">₹3 Lakh</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="p-4 font-bold text-gray-300">2nd</td>
+                                <td class="p-4 font-bold text-gray-300"><i class="fa-solid fa-trophy mr-2"></i> 2nd</td>
                                 <td class="p-4">₹2 Lakh</td>
                                 <td class="p-4">₹2 Lakh</td>
                                 <td class="p-4">₹2 Lakh</td>
                             </tr>
                             <tr>
-                                <td class="p-4 font-bold text-orange-700">3rd</td>
+                                <td class="p-4 font-bold text-orange-700"><i class="fa-solid fa-trophy mr-2"></i> 3rd</td>
                                 <td class="p-4">₹1 Lakh</td>
                                 <td class="p-4">₹1 Lakh</td>
                                 <td class="p-4">₹1 Lakh</td>
@@ -476,7 +488,8 @@
                     <div class="p-4 border border-pink-500/30 rounded-lg bg-pink-500/5 mt-4">
                         <p class="text-sm text-blue-300 font-bold">Special Awards (₹50k Each):</p>
                         <p class="text-xs text-gray-400 mt-1">Best Women-Led Team • Best Student Innovation • Best Rural
-                            Solution</p>
+                          •   Solution Best Smart City Solution
+  •  People's Choice Award</p>
                     </div>
                 </div>
             </div>
@@ -487,7 +500,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-display font-bold">Event Schedule</h2>
-                <p class="text-gray-500 mt-2">January 11, 2026</p>
+                <p class="text-gray-500 mt-2">January 11, 2026 | Ravindra Bhavan, Bhopal</p>
             </div>
 
             <div class="space-y-6">
@@ -502,7 +515,7 @@
                             <h3 class="text-xl font-bold text-white">Registration & Breakfast</h3>
                             <span class="text-blue-500 font-mono text-sm">07:30 - 09:00</span>
                         </div>
-                        <p class="text-gray-400 text-sm">Check-in, Kit Distribution, Team Formation @ Lawns</p>
+                        <p class="text-gray-400 text-sm">Check-in, Kit Distribution, Team Formation</p>
                     </div>
                 </div>
 
@@ -514,10 +527,10 @@
                     </div>
                     <div class="glass-card p-6 rounded-xl flex-1 hover:bg-white/5 transition-all">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-white">Grand Opening</h3>
+                            <h3 class="text-xl font-bold text-white">Grand Opening Ceremony</h3>
                             <span class="text-purple-500 font-mono text-sm">09:00 - 10:00</span>
                         </div>
-                        <p class="text-gray-400 text-sm">Problem Reveal & VIP Address @ Main Auditorium</p>
+                        <p class="text-gray-400 text-sm">Lamp Lighting, VIP Address, Problem Statement Reveal</p>
                     </div>
                 </div>
 
@@ -530,10 +543,28 @@
                     <div
                         class="glass-card p-6 rounded-xl flex-1 hover:bg-white/5 transition-all border-l-4 border-l-purple-500">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-white">HACKING & BUILDING SPRINT</h3>
-                            <span class="text-purple-500 font-mono text-sm">10:00 - 17:00</span>
+                            <h3 class="text-xl font-bold text-white"> Build Sprint 1</h3>
+                            <span class="text-purple-500 font-mono text-sm">10:00 - 13:00</span>
                         </div>
-                        <p class="text-gray-400 text-sm">Ideation, Development, Prototyping. Lunch included at 13:00.
+                        
+                        <p class="text-gray-400 text-sm">Ideation → Design → Development Begins (Mentor Rotation)
+                        </p>
+                    </div>
+                </div>
+                <div class="flex group" data-aos="fade-up">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-px h-full bg-gray-800"></div>
+                        <div class="h-4 w-4 rounded-full border-2 border-pink-500 bg-black z-10"></div>
+                        <div class="w-px h-full bg-gray-800"></div>
+                    </div>
+                    <div
+                        class="glass-card p-6 rounded-xl flex-1 hover:bg-white/5 transition-all border-l-4 border-l-purple-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white"> Build Sprint 2</h3>
+                            <span class="text-purple-500 font-mono text-sm">14:00 - 17:00</span>
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm">Development → Testing → Prototype Ready
                         </p>
                     </div>
                 </div>
@@ -549,7 +580,7 @@
                             <h3 class="text-xl font-bold text-white">Grand Finale & Awards</h3>
                             <span class="text-yellow-500 font-mono text-sm">19:00 - 20:00</span>
                         </div>
-                        <p class="text-gray-400 text-sm">Demo Derby, Chief Guest Address, Prize Distribution.</p>
+                        <p class="text-gray-400 text-sm">Chief Guest Address, LOI Signings, Prize Distribution</p>
                     </div>
                 </div>
             </div>
@@ -618,7 +649,35 @@
                 document.getElementById("days").innerText = "00";
             }
         }, 1000);
+
+     const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = btn.querySelector('i');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        
+       
+        if (menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        }
+    });
+
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        });
+    });
     </script>
+   
 </body>
 
 </html>
