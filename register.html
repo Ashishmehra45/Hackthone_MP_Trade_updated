@@ -84,16 +84,39 @@
 
 <body class="relative">
 
-    <nav class="fixed w-full z-50 glass-card py-3 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-14">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    
-                      <img src="./logo_v2_option_e.svg"  class="tracking-tighter" height="20px" width="150px"/>
-                </a>
+   <nav class="fixed w-full z-50 glass-card py-3 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-14">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="./logo_v2_option_e.svg" class="tracking-tighter" height="20px" width="150px" alt="Startup MP"/>
+            </a>
+
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html#about" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
+                <a href="index.html#tracks" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
+                <a href="index.html#prizes" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
+                <a href="index.html#schedule" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
+                <a href="FAQs.html" class="hover:text-blue-400 transition-colors text-sm font-medium">FAQs</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute top-20 left-0 w-full transition-all duration-300">
+        <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col items-center">
+            <a href="index.html" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Home</a>
+            <a href="index.html#about" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">About</a>
+            <a href="index.html#tracks" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Tracks</a>
+            <a href="index.html#prizes" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Prizes</a>
+            <a href="FAQs.html" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">FAQs</a>
+        </div>
+    </div>
+</nav>
 
     <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
         <div class="hero-bg"></div>
@@ -251,6 +274,39 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+        // ... AOS.init ke neeche ...
+
+        // --- MOBILE MENU LOGIC ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn ? btn.querySelector('i') : null;
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                
+                // Icon Toggle (Bars <-> Xmark)
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+        }
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                if(icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
 
         // --- GLOBAL REFERENCES ---
         const categorySelect = document.getElementById('categorySelect');
