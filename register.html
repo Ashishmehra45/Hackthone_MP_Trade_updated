@@ -104,11 +104,12 @@
             </a>
             </div>
 
-            <div class="hidden md:flex gap-8 items-center">
-                <a href="#" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
-                <a href="#" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
-                <a href="#" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
-                <a href="#" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
+           <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html#about" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
+                <a href="index.html#tracks" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
+                <a href="index.html#prizes" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
+                <a href="index.html#schedule" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
+                <a href="#" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1">FAQs</a>
             </div>
 
             <div class="flex items-center gap-4">
@@ -121,8 +122,11 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute top-20 left-0 w-full transition-all duration-300">
         <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col items-center">
-            <a href="#" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Home</a>
-            <a href="#" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10 w-full text-center">Tracks</a>
+           <a href="index.html#about" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
+                <a href="index.html#tracks" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
+                <a href="index.html#prizes" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
+                <a href="index.html#schedule" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
+                <a href="#" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1">FAQs</a>
         </div>
     </div>
 </nav>
@@ -494,10 +498,12 @@
                     alert('❌ Error: ' + result.message);
                 }
 
-            } catch (error) {
+            }
+             catch (error) {
                 console.error('Error:', error);
                 alert('❌ Network Error: Is the Node backend running on port 5000?');
-            } finally {
+            } 
+            finally {
                 // Reset Button
                 submitBtn.disabled = false;
                 btnSpan.innerHTML = originalContent;
