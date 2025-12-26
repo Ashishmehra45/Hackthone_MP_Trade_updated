@@ -113,6 +113,17 @@
 #about{
     overflow: hidden;
 }
+@media (min-width: 0px) and (max-width: 500px) {
+    .hero-slide {
+        object-fit: contain;
+        object-position: top;
+        background: linear-gradient(180deg, #35337F 0%, #35337F 40%, #35337F 100%);
+        
+    }
+    #real{
+        height: 160px;
+    }
+}
 @media (min-width: 500px) and (max-width: 640px) {
     .hero-slide {
         object-fit: contain;
@@ -144,7 +155,7 @@
         
     }
     #real{
-        height: 250px;
+        height: 300px;
     }
 }
 
@@ -152,12 +163,12 @@
 
     .hero-slide {
         object-fit: contain;
-        object-position: center;
+        object-position: top;
         background: linear-gradient(180deg, #35337F 0%, #35337F 40%, #35337F 100%);
         
     }
     #real{
-        height: 400px;
+        height: 480px;
     }
 }
 
@@ -169,13 +180,6 @@
     }
     #real{
         height: 500px;
-    }
-}
-@media (min-width: 1700px) and (max-width: 2500px) {
-    .hero-slide {
-        object-fit: contain;
-        object-position: top;
-        background: linear-gradient(180deg, #35337F 0%, #35337F 40%, #35337F 100%);
     }
 }
 
