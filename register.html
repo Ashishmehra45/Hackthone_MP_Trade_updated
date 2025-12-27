@@ -1,395 +1,616 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register | Startup MP: Hack&Make 2026</title>
-     <link rel="icon" href="./unnamed__1_-removebg-preview.png " type="image/svg+xml">
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="icon"
+      href="./unnamed__1_-removebg-preview.png "
+      type="image/svg+xml"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#050505',
-                            pink: '#be185d',
-                            purple: '#7e22ce',
-                            accent: '#f43f5e'
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                dark: "#050505",
+                pink: "#be185d",
+                purple: "#7e22ce",
+                accent: "#f43f5e",
+              },
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+      body {
+        background-color: #050505;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #be185d; }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #be185d;
+      }
 
-        /* HERO BACKGROUND */
-        .hero-bg {
-            background: radial-gradient(circle at center, transparent 0%, #050505 100%),
-                repeating-linear-gradient(90deg, #000 0px, #000 2px, transparent 2px, transparent 40px),
-                linear-gradient(180deg, #000 0%, #3a0ca3 100%);
-            background: linear-gradient(180deg, #070707 0%, #5f76eb 40%, #1c181e 100%);
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            opacity: 0.8;
-        }
+      /* HERO BACKGROUND */
+      .hero-bg {
+        background: radial-gradient(
+            circle at center,
+            transparent 0%,
+            #050505 100%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            #000 0px,
+            #000 2px,
+            transparent 2px,
+            transparent 40px
+          ),
+          linear-gradient(180deg, #000 0%, #3a0ca3 100%);
+        background: linear-gradient(
+          180deg,
+          #070707 0%,
+          #5f76eb 40%,
+          #1c181e 100%
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.8;
+      }
 
-        /* Glassmorphism */
-        .glass-card {
-            background:  rgba(55, 0, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+      /* Glassmorphism */
+      .glass-card {
+        background: rgba(55, 0, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
 
-        .text-gradient {
-            background: linear-gradient(to right, #7474cb, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        input:focus, select:focus {
-            outline: none;
-            border-color: #a855f7;
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-        }
+      .text-gradient {
+        background: linear-gradient(to right, #7474cb, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #a855f7;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
         }
-        .animate-fade-in-down {
-            animation: fadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
+      .animate-fade-in-down {
+        animation: fadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
     </style>
-</head>
+  </head>
 
-<body class="relative">
-
-   <nav class="fixed w-full z-50 glass-card py-1 transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <body class="relative">
+    <nav
+      class="fixed w-full z-50 glass-card py-1 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-14">
-           <div class="flex-shrink-0 flex justify-between gap-2">
+          <div class="flex-shrink-0 flex justify-between gap-2">
             <a href="./index.html">
-                <img src="./logo_v2_option_e.svg" class="tracking-tighter" height="20px" width="150px" />
-
+              <img
+                src="./logo_v2_option_e.svg"
+                class="tracking-tighter"
+                height="20px"
+                width="150px"
+              />
             </a>
-            </div>
+          </div>
 
-           <div class="hidden md:flex gap-8 items-center">
-                <a href="index.html#about" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
-                <a href="index.html#tracks" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
-                <a href="index.html#prizes" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
-                <a href="index.html#schedule" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
-                <a href="./FAQs.html" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1">FAQs</a>
-            </div>
+          <div class="hidden md:flex gap-8 items-center">
+            <a
+              href="index.html#about"
+              class="hover:text-blue-400 transition-colors text-sm font-medium"
+              >About</a
+            >
+            <a
+              href="index.html#tracks"
+              class="hover:text-blue-400 transition-colors text-sm font-medium"
+              >Tracks</a
+            >
+            <a
+              href="index.html#prizes"
+              class="hover:text-blue-400 transition-colors text-sm font-medium"
+              >Prizes</a
+            >
+            <a
+              href="index.html#schedule"
+              class="hover:text-blue-400 transition-colors text-sm font-medium"
+              >Schedule</a
+            >
+            <a
+              href="./FAQs.html"
+              class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1"
+              >FAQs</a
+            >
+          </div>
 
-            <div class="flex items-center gap-4">
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
+          <div class="flex items-center gap-4">
+            <button
+              id="mobile-menu-btn"
+              class="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            >
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute top-20 left-0 w-full transition-all duration-300">
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 absolute top-20 left-0 w-full transition-all duration-300"
+      >
         <div class="px-4 pt-4 pb-8 space-y-2 flex flex-col items-center">
-           <a href="index.html#about" class="hover:text-blue-400 transition-colors text-sm font-medium">About</a>
-                <a href="index.html#tracks" class="hover:text-blue-400 transition-colors text-sm font-medium">Tracks</a>
-                <a href="index.html#prizes" class="hover:text-blue-400 transition-colors text-sm font-medium">Prizes</a>
-                <a href="index.html#schedule" class="hover:text-blue-400 transition-colors text-sm font-medium">Schedule</a>
-                <a href="./FAQs.html" class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1">FAQs</a>
+          <a
+            href="index.html#about"
+            class="hover:text-blue-400 transition-colors text-sm font-medium"
+            >About</a
+          >
+          <a
+            href="index.html#tracks"
+            class="hover:text-blue-400 transition-colors text-sm font-medium"
+            >Tracks</a
+          >
+          <a
+            href="index.html#prizes"
+            class="hover:text-blue-400 transition-colors text-sm font-medium"
+            >Prizes</a
+          >
+          <a
+            href="index.html#schedule"
+            class="hover:text-blue-400 transition-colors text-sm font-medium"
+            >Schedule</a
+          >
+          <a
+            href="./FAQs.html"
+            class="text-sm font-bold text-white border-b-2 border-purple-500 pb-1"
+            >FAQs</a
+          >
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
-        <div class="hero-bg"></div>
-        
-        <div class="absolute top-1/4 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
-        <div class="absolute bottom-1/3 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+    <section
+      class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden"
+    >
+      <div class="hero-bg"></div>
 
-        <div class="relative max-w-4xl w-full mx-4 z-10">
-            
-            <div class="text-center mb-10" data-aos="fade-down">
-                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-500/10 rounded-full border border-blue-500/20">
-                    Official Registration
+      <div
+        class="absolute top-1/4 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"
+      ></div>
+      <div
+        class="absolute bottom-1/3 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"
+      ></div>
+
+      <div class="relative max-w-4xl w-full mx-4 z-10">
+        <div class="text-center mb-10" data-aos="fade-down">
+          <div
+            class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-500/10 rounded-full border border-blue-500/20"
+          >
+            Official Registration
+          </div>
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-4">
+            Register Your <span class="text-gradient">Squad</span>
+          </h1>
+          <p class="text-white-400 text-lg">
+            Join the biggest innovation sprint of Madhya Pradesh.
+          </p>
+        </div>
+
+        <form
+          id="registrationForm"
+          class="glass-card p-6 md:p-10 rounded-3xl border-t border-white/10 shadow-2xl relative overflow-hidden"
+          data-aos="fade-up"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          ></div>
+
+          <div class="mb-10">
+            <h3
+              class="text-xl font-bold text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400"
+              >
+                <i class="fa-solid fa-user-astronaut"></i>
+              </div>
+              Team Leader Details
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  name="firstName"
+                  required
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all"
+                  placeholder="Enter first name"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  name="lastName"
+                  required
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all"
+                  placeholder="Enter last name"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all"
+                  placeholder="name@example.com"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Mobile Number</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all"
+                  placeholder="9000000000"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Team Leader Gender</label
+                >
+                <div class="relative">
+                  <select
+                    name="gender"
+                    class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer"
+                  >
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400"
+                  >
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </div>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-display font-bold mb-4">Register Your <span class="text-gradient">Squad</span></h1>
-                <p class="text-white-400 text-lg">Join the biggest innovation sprint of Madhya Pradesh.</p>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Participant Category</label
+                >
+                <div class="relative">
+                  <select
+                    id="categorySelect"
+                    name="category"
+                    class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer"
+                  >
+                    <option value="institution">Institution / Student</option>
+                    <option value="organization">Organization / Startup</option>
+                    <option value="freelancer">Freelancer / Individual</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400"
+                  >
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div id="instituteContainer" class="space-y-2 md:col-span-2">
+                <label
+                  id="instLabel"
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Institute Name</label
+                >
+                <input
+                  type="text"
+                  id="instituteInput"
+                  name="institute"
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all"
+                  placeholder="e.g. IIT Indore"
+                />
+              </div>
+
+              <div class="space-y-2 md:col-span-2 animate-fade-in-down">
+                <label
+                  id="dynamicLabel"
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Roll Number / ID</label
+                >
+                <input
+                  type="text"
+                  id="dynamicInput"
+                  name="rollNo"
+                  required
+                  class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:bg-black/60 transition-all"
+                  placeholder="Enter your Roll Number"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-8"
+          ></div>
+
+          <div class="mb-8">
+            <h3
+              class="text-xl font-bold text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400"
+              >
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              Team Configuration
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Total Team Size</label
+                >
+                <div class="relative">
+                  <select
+                    id="teamSize"
+                    class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer"
+                  >
+                    <option value="2" selected>2 Members (Minimum)</option>
+                    <option value="3">3 Members</option>
+                    <option value="4">4 Members</option>
+                    <option value="5">5 Members (Max)</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400"
+                  >
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-semibold text-white-400 uppercase tracking-wider"
+                  >Select Track</label
+                >
+                <div class="relative">
+                  <select
+                    name="track"
+                    class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer"
+                  >
+                    <option value="code">Code It (Software)</option>
+                    <option value="build">Build It (Hardware)</option>
+                    <option value="ship">Ship It (Business)</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400"
+                  >
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <form id="registrationForm" class="glass-card p-6 md:p-10 rounded-3xl border-t border-white/10 shadow-2xl relative overflow-hidden" data-aos="fade-up">
-                
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+            <div id="teamMembersContainer" class="space-y-4"></div>
+          </div>
 
-                <div class="mb-10">
-                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
-                            <i class="fa-solid fa-user-astronaut"></i>
-                        </div>
-                        Team Leader Details
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">First Name</label>
-                            <input type="text" name="firstName" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all" placeholder="Enter first name">
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Last Name</label>
-                            <input type="text" name="lastName" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all" placeholder="Enter last name">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Email Address</label>
-                            <input type="email" name="email" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all" placeholder="name@example.com">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Mobile Number</label>
-                            <input type="tel" name="phone" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all" placeholder="9000000000">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Team Leader Gender</label>
-                            <div class="relative">
-                                <select name="gender" class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer">
-                                    <option value="" disabled selected>Select Gender</option>
-                                    <option value="male">Male </option>
-                                    <option value="female">Female </option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Participant Category</label>
-                            <div class="relative">
-                                <select id="categorySelect" name="category" class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer">
-                                    <option value="institution">Institution / Student</option>
-                                    <option value="organization">Organization / Startup</option>
-                                    <option value="freelancer">Freelancer / Individual</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="instituteContainer" class="space-y-2 md:col-span-2">
-                            <label id="instLabel" class="text-xs font-semibold text-white-400 uppercase tracking-wider">Institute Name</label>
-                            <input type="text" id="instituteInput" name="institute" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:bg-black/60 transition-all" placeholder="e.g. IIT Indore">
-                        </div>
-
-                        <div class="space-y-2 md:col-span-2 animate-fade-in-down">
-                            <label id="dynamicLabel" class="text-xs font-semibold text-white-400 uppercase tracking-wider">Roll Number / ID</label>
-                            <input type="text" id="dynamicInput" name="rollNo" required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:bg-black/60 transition-all" placeholder="Enter your Roll Number">
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-8"></div>
-
-                <div class="mb-8">
-                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
-                            <i class="fa-solid fa-users-gear"></i>
-                        </div>
-                        Team Configuration
-                    </h3>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Total Team Size</label>
-                            <div class="relative">
-                                <select id="teamSize" class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer">
-                                    <option value="2" selected>2 Members (Minimum)</option>
-                                    <option value="3">3 Members</option>
-                                    <option value="4">4 Members</option>
-                                    <option value="5">5 Members (Max)</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-semibold text-white-400 uppercase tracking-wider">Select Track</label>
-                            <div class="relative">
-                                <select name="track" class="w-full appearance-none bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:bg-black/60 transition-all cursor-pointer">
-                                    <option value="code">Code It (Software)</option>
-                                    <option value="build">Build It (Hardware)</option>
-                                    <option value="ship">Ship It (Business)</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-white-400">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="teamMembersContainer" class="space-y-4"></div>
-                </div>
-
-                <div class="mt-10 pt-4">
-                    <button type="submit" class="w-full group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-5 rounded-xl shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed">
-                        <span class="relative z-10 flex items-center justify-center gap-2 text-lg">
-                             Register Your Team <i class="fa-solid fa-rocket group-hover:translate-x-1 transition-transform"></i>
-                        </span>
-                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    </button>
-                    <p class="text-center text-xs text-gray-500 mt-4">By registering, you agree to the rules & regulations.</p>
-                </div>
-
-            </form>
-        </div>
+          <div class="mt-10 pt-4">
+            <button
+              type="submit"
+              class="w-full group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-5 rounded-xl shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              <span
+                class="relative z-10 flex items-center justify-center gap-2 text-lg"
+              >
+                Register Your Team
+                <i
+                  class="fa-solid fa-rocket group-hover:translate-x-1 transition-transform"
+                ></i>
+              </span>
+              <div
+                class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              ></div>
+            </button>
+            <p class="text-center text-xs text-gray-500 mt-4">
+              By registering, you agree to the rules & regulations.
+            </p>
+          </div>
+        </form>
+      </div>
     </section>
 
     <footer class="border-t border-white/10 bg-black py-8">
-        <div class="text-center text-gray-600 text-sm">
-            <p>&copy; 2025 Startup MP.</p>
-        </div>
+      <div class="text-center text-gray-600 text-sm">
+        <p>&copy; 2025 Startup MP.</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+      AOS.init({ duration: 800, once: true });
 
-        // --- MOBILE MENU LOGIC ---
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = btn ? btn.querySelector('i') : null;
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+      // --- MOBILE MENU LOGIC ---
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const icon = btn ? btn.querySelector("i") : null;
+      const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        if (btn) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                if (menu.classList.contains('hidden')) {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
-                }
-            });
-        }
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                if(icon) {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                }
-            });
+      if (btn) {
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+          if (menu.classList.contains("hidden")) {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          } else {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+          }
         });
+      }
 
-        // --- GLOBAL REFERENCES ---
-        const categorySelect = document.getElementById('categorySelect');
-        const dynamicLabel = document.getElementById('dynamicLabel');
-        const dynamicInput = document.getElementById('dynamicInput');
-        const instituteContainer = document.getElementById('instituteContainer');
-        const instituteInput = document.getElementById('instituteInput');
-        const instLabel = document.getElementById('instLabel');
-        const teamSizeSelect = document.getElementById('teamSize');
-        const container = document.getElementById('teamMembersContainer');
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          if (icon) {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          }
+        });
+      });
 
-        // --- 1. HANDLE CATEGORY CHANGES ---
-        function updateAllFields() {
-            const value = categorySelect.value;
-            dynamicInput.value = ''; 
-            
-            if (value === 'freelancer') {
-                instituteContainer.style.display = 'none';
-                instituteInput.required = false;
-                dynamicLabel.innerText = 'LinkedIn Profile URL';
-                dynamicInput.placeholder = 'https://linkedin.com/in/yourprofile';
-                dynamicInput.name = 'linkedin';
-            } else {
-                instituteContainer.style.display = 'block';
-                instituteInput.required = true;
-                
-                if (value === 'institution') {
-                    instLabel.innerText = 'Institute Name';
-                    instituteInput.placeholder = 'e.g. IIT Indore';
-                    dynamicLabel.innerText = 'Roll Number / ID';
-                    dynamicInput.placeholder = 'Enter your College Roll No';
-                    dynamicInput.name = 'rollNo';
-                } else if (value === 'organization') {
-                    instLabel.innerText = 'Organization Name';
-                    instituteInput.placeholder = 'e.g. Tech Solutions Pvt Ltd';
-                    dynamicLabel.innerText = 'GST Number';
-                    dynamicInput.placeholder = 'Enter Organization GST Number';
-                    dynamicInput.name = 'gstNo';
-                }
-            }
+      // --- GLOBAL REFERENCES ---
+      const categorySelect = document.getElementById("categorySelect");
+      const dynamicLabel = document.getElementById("dynamicLabel");
+      const dynamicInput = document.getElementById("dynamicInput");
+      const instituteContainer = document.getElementById("instituteContainer");
+      const instituteInput = document.getElementById("instituteInput");
+      const instLabel = document.getElementById("instLabel");
+      const teamSizeSelect = document.getElementById("teamSize");
+      const container = document.getElementById("teamMembersContainer");
 
-            // Animation Reset
-            dynamicInput.parentElement.classList.remove('animate-fade-in-down');
-            void dynamicInput.parentElement.offsetWidth; 
-            dynamicInput.parentElement.classList.add('animate-fade-in-down');
+      // --- 1. HANDLE CATEGORY CHANGES ---
+      function updateAllFields() {
+        const value = categorySelect.value;
+        dynamicInput.value = "";
 
-            generateMemberFields();
+        if (value === "freelancer") {
+          instituteContainer.style.display = "none";
+          instituteInput.required = false;
+          dynamicLabel.innerText = "LinkedIn Profile URL";
+          dynamicInput.placeholder = "https://linkedin.com/in/yourprofile";
+          dynamicInput.name = "linkedin";
+        } else {
+          instituteContainer.style.display = "block";
+          instituteInput.required = true;
+
+          if (value === "institution") {
+            instLabel.innerText = "Institute Name";
+            instituteInput.placeholder = "e.g. IIT Indore";
+            dynamicLabel.innerText = "Roll Number / ID";
+            dynamicInput.placeholder = "Enter your College Roll No";
+            dynamicInput.name = "rollNo";
+          } else if (value === "organization") {
+            instLabel.innerText = "Organization Name";
+            instituteInput.placeholder = "e.g. Tech Solutions Pvt Ltd";
+            dynamicLabel.innerText = "GST Number";
+            dynamicInput.placeholder = "Enter Organization GST Number";
+            dynamicInput.name = "gstNo";
+          }
         }
 
-        categorySelect.addEventListener('change', updateAllFields);
+        // Animation Reset
+        dynamicInput.parentElement.classList.remove("animate-fade-in-down");
+        void dynamicInput.parentElement.offsetWidth;
+        dynamicInput.parentElement.classList.add("animate-fade-in-down");
 
-        // --- 2. GENERATE MEMBER FIELDS DYNAMICALLY ---
-        function generateMemberFields() {
-            const totalMembers = parseInt(teamSizeSelect.value);
-            const category = categorySelect.value;
-            
-            let fieldLabel = "Institute Name";
-            let fieldPlaceholder = "College Name";
-            let fieldName = "institute";
+        generateMemberFields();
+      }
 
-            if (category === 'organization') {
-                fieldLabel = "Organization Name";
-                fieldPlaceholder = "Company Name";
-            } else if (category === 'freelancer') {
-                fieldLabel = "LinkedIn ID";
-                fieldPlaceholder = "Profile URL";
-                fieldName = "linkedin";
-            }
+      categorySelect.addEventListener("change", updateAllFields);
 
-            container.innerHTML = ''; 
+      // --- 2. GENERATE MEMBER FIELDS DYNAMICALLY ---
+      function generateMemberFields() {
+        const totalMembers = parseInt(teamSizeSelect.value);
+        const category = categorySelect.value;
 
-            for (let i = 2; i <= totalMembers; i++) {
-                const memberHTML = `
+        let fieldLabel = "Institute Name";
+        let fieldPlaceholder = "College Name";
+        let fieldName = "institute";
+
+        if (category === "organization") {
+          fieldLabel = "Organization Name";
+          fieldPlaceholder = "Company Name";
+        } else if (category === "freelancer") {
+          fieldLabel = "LinkedIn ID";
+          fieldPlaceholder = "Profile URL";
+          fieldName = "linkedin";
+        }
+
+        container.innerHTML = "";
+
+        for (let i = 2; i <= totalMembers; i++) {
+          const memberHTML = `
                     <div class="glass-card p-5 rounded-xl border border-white/5 bg-white/5 animate-fade-in-down">
                         <div class="flex items-center gap-2 mb-4">
                             <span class="bg-blue-500/20 text-blue-300 text-xs font-bold px-2 py-1 rounded">MEMBER 0${i}</span>
@@ -415,213 +636,244 @@
                         </div>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', memberHTML);
-            }
+          container.insertAdjacentHTML("beforeend", memberHTML);
         }
+      }
 
-        teamSizeSelect.addEventListener('change', generateMemberFields);
-        updateAllFields(); // Init
+      teamSizeSelect.addEventListener("change", generateMemberFields);
+      updateAllFields(); // Init
 
-        // --- VALIDATION HELPER FUNCTIONS ---
-        function validateEmail(email) {
-            // Checks for @ and at least 2 chars after the last dot (e.g. .co, .in, .com)
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-            return regex.test(email);
+      // --- VALIDATION HELPER FUNCTIONS ---
+      function validateEmail(email) {
+        // Checks for @ and at least 2 chars after the last dot (e.g. .co, .in, .com)
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        return regex.test(email);
+      }
+
+      function validatePhone(phone) {
+        // Checks for exactly 10 digits
+        const regex = /^\d{10}$/;
+        return regex.test(phone);
+      }
+
+      function showError(inputElement, message) {
+        // Check if error message already exists
+        const parent = inputElement.parentElement;
+        let errorP = parent.querySelector(".error-msg");
+
+        if (!errorP) {
+          errorP = document.createElement("p");
+          errorP.className =
+            "text-red-500 text-xs mt-1 font-semibold error-msg animate-fade-in-down";
+          parent.appendChild(errorP);
         }
+        errorP.innerText = message;
+        inputElement.classList.add(
+          "border-red-500",
+          "focus:border-red-500",
+          "bg-red-500/10"
+        );
+      }
 
-        function validatePhone(phone) {
-            // Checks for exactly 10 digits
-            const regex = /^\d{10}$/;
-            return regex.test(phone);
-        }
+      function clearErrors() {
+        document.querySelectorAll(".error-msg").forEach((el) => el.remove());
+        document.querySelectorAll("input").forEach((input) => {
+          input.classList.remove(
+            "border-red-500",
+            "focus:border-red-500",
+            "bg-red-500/10"
+          );
+        });
+      }
 
-        function showError(inputElement, message) {
-            // Check if error message already exists
-            const parent = inputElement.parentElement;
-            let errorP = parent.querySelector('.error-msg');
-            
-            if (!errorP) {
-                errorP = document.createElement('p');
-                errorP.className = 'text-red-500 text-xs mt-1 font-semibold error-msg animate-fade-in-down';
-                parent.appendChild(errorP);
-            }
-            errorP.innerText = message;
-            inputElement.classList.add('border-red-500', 'focus:border-red-500', 'bg-red-500/10');
-        }
+      // --- 3. API SUBMISSION HANDLER (CONNECTS TO NODE.JS) ---
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
 
-        function clearErrors() {
-            document.querySelectorAll('.error-msg').forEach(el => el.remove());
-            document.querySelectorAll('input').forEach(input => {
-                input.classList.remove('border-red-500', 'focus:border-red-500', 'bg-red-500/10');
-            });
-        }
+          // 0. CLEAR OLD ERRORS
+          clearErrors();
+          let hasError = false;
+          let firstErrorInput = null;
 
-        // --- 3. API SUBMISSION HANDLER (CONNECTS TO NODE.JS) ---
-        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // 0. CLEAR OLD ERRORS
-            clearErrors();
-            let hasError = false;
-            let firstErrorInput = null;
+          const formData = new FormData(this);
+          const teamSize = parseInt(document.getElementById("teamSize").value);
 
-            const formData = new FormData(this);
-            const teamSize = parseInt(document.getElementById('teamSize').value);
+          // 1. VALIDATE TEAM LEADER
+          const leaderEmailInput = this.querySelector('input[name="email"]');
+          const leaderPhoneInput = this.querySelector('input[name="phone"]');
 
-            // 1. VALIDATE TEAM LEADER
-            const leaderEmailInput = this.querySelector('input[name="email"]');
-            const leaderPhoneInput = this.querySelector('input[name="phone"]');
+          if (!validateEmail(leaderEmailInput.value)) {
+            showError(
+              leaderEmailInput,
+              "Please enter a valid email address (e.g., user@example.com)"
+            );
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = leaderEmailInput;
+          }
 
-            if (!validateEmail(leaderEmailInput.value)) {
-                showError(leaderEmailInput, "Please enter a valid email address (e.g., user@example.com)");
-                hasError = true;
-                if (!firstErrorInput) firstErrorInput = leaderEmailInput;
-            }
+          if (!validatePhone(leaderPhoneInput.value)) {
+            showError(
+              leaderPhoneInput,
+              "Please enter exactly 10 digits without +91 or spaces"
+            );
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = leaderPhoneInput;
+          }
 
-            if (!validatePhone(leaderPhoneInput.value)) {
-                showError(leaderPhoneInput, "Please enter exactly 10 digits without +91 or spaces");
-                hasError = true;
-                if (!firstErrorInput) firstErrorInput = leaderPhoneInput;
-            }
+          // 2. VALIDATE TEAM MEMBERS
+          for (let i = 2; i <= teamSize; i++) {
+            const memEmailInput = this.querySelector(
+              `input[name="member${i}_email"]`
+            );
+            const memPhoneInput = this.querySelector(
+              `input[name="member${i}_phone"]`
+            );
 
-            // 2. VALIDATE TEAM MEMBERS
-            for (let i = 2; i <= teamSize; i++) {
-                const memEmailInput = this.querySelector(`input[name="member${i}_email"]`);
-                const memPhoneInput = this.querySelector(`input[name="member${i}_phone"]`);
-
-                if (memEmailInput && !validateEmail(memEmailInput.value)) {
-                    showError(memEmailInput, "Invalid email address");
-                    hasError = true;
-                    if (!firstErrorInput) firstErrorInput = memEmailInput;
-                }
-
-                if (memPhoneInput && !validatePhone(memPhoneInput.value)) {
-                    showError(memPhoneInput, "Enter 10 digit mobile no");
-                    hasError = true;
-                    if (!firstErrorInput) firstErrorInput = memPhoneInput;
-                }
+            if (memEmailInput && !validateEmail(memEmailInput.value)) {
+              showError(memEmailInput, "Invalid email address");
+              hasError = true;
+              if (!firstErrorInput) firstErrorInput = memEmailInput;
             }
 
-            // STOP IF ERROR
-            if (hasError) {
-                if (firstErrorInput) firstErrorInput.focus();
-                return;
+            if (memPhoneInput && !validatePhone(memPhoneInput.value)) {
+              showError(memPhoneInput, "Enter 10 digit mobile no");
+              hasError = true;
+              if (!firstErrorInput) firstErrorInput = memPhoneInput;
             }
+          }
 
-            // ---------------------------------------------------------
-            // IF VALIDATION PASSES, PROCEED WITH ORIGINAL LOGIC BELOW
-            // ---------------------------------------------------------
+          // STOP IF ERROR
+          if (hasError) {
+            if (firstErrorInput) firstErrorInput.focus();
+            return;
+          }
 
-            const category = document.getElementById('categorySelect').value;
+          // ---------------------------------------------------------
+          // IF VALIDATION PASSES, PROCEED WITH ORIGINAL LOGIC BELOW
+          // ---------------------------------------------------------
 
-            // Prepare JSON Payload
-            const payload = {
-                leader: {
-                    firstName: formData.get('firstName'),
-                    lastName: formData.get('lastName'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    gender: formData.get('gender'),
-                    category: category,
-                    instituteOrOrg: category === 'freelancer' ? 'N/A' : formData.get('institute'),
-                    uniqueId: category === 'freelancer' ? formData.get('linkedin') : 
-                              (category === 'organization' ? formData.get('gstNo') : formData.get('rollNo'))
-                },
-                teamConfig: {
-                    size: teamSize,
-                    track: formData.get('track')
-                },
-                members: []
-            };
+          const category = document.getElementById("categorySelect").value;
 
-            // 2. Loop through members
-            for (let i = 2; i <= teamSize; i++) {
-                let identifierKey = 'institute'; 
-                if (category === 'freelancer') identifierKey = 'linkedin';
-                
-                const memberName = formData.get(`member${i}_name`);
-                // Use the correct key based on what we generated in HTML
-                const memberId = formData.get(`member${i}_${identifierKey}`) || formData.get(`member${i}_institute`);
-                const memberEmail = formData.get(`member${i}_email`);
-                const memberPhone = formData.get(`member${i}_phone`);
+          // Prepare JSON Payload
+          const payload = {
+            leader: {
+              firstName: formData.get("firstName"),
+              lastName: formData.get("lastName"),
+              email: formData.get("email"),
+              phone: formData.get("phone"),
+              gender: formData.get("gender"),
+              category: category,
+              instituteOrOrg:
+                category === "freelancer" ? "N/A" : formData.get("institute"),
+              uniqueId:
+                category === "freelancer"
+                  ? formData.get("linkedin")
+                  : category === "organization"
+                  ? formData.get("gstNo")
+                  : formData.get("rollNo"),
+            },
+            teamConfig: {
+              size: teamSize,
+              track: formData.get("track"),
+            },
+            members: [],
+          };
 
-                if (memberName) {
-                    payload.members.push({
-                        name: memberName,
-                        identifier: memberId,
-                        email: memberEmail,
-                        phone: memberPhone
-                    });
-                }
+          // 2. Loop through members
+          for (let i = 2; i <= teamSize; i++) {
+            let identifierKey = "institute";
+            if (category === "freelancer") identifierKey = "linkedin";
+
+            const memberName = formData.get(`member${i}_name`);
+            // Use the correct key based on what we generated in HTML
+            const memberId =
+              formData.get(`member${i}_${identifierKey}`) ||
+              formData.get(`member${i}_institute`);
+            const memberEmail = formData.get(`member${i}_email`);
+            const memberPhone = formData.get(`member${i}_phone`);
+
+            if (memberName) {
+              payload.members.push({
+                name: memberName,
+                identifier: memberId,
+                email: memberEmail,
+                phone: memberPhone,
+              });
             }
+          }
 
-            // 3. Send to Server
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnSpan = submitBtn.querySelector('span');
-            const originalContent = btnSpan.innerHTML;
-            
-            try {
-                // Loading State
-                submitBtn.disabled = true;
-                btnSpan.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Registering...';
+          // 3. Send to Server
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const btnSpan = submitBtn.querySelector("span");
+          const originalContent = btnSpan.innerHTML;
 
-                // Ensure your Node server is running on port 5000
-                const response = await fetch('https://incubationmasters.com/api/hackathon/hackathon-register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+          try {
+            // Loading  
+            submitBtn.disabled = true;
+            btnSpan.innerHTML =
+              '<i class="fa-solid fa-circle-notch fa-spin"></i> Registering...';
 
-                const result = await response.json();
+            // Ensure your Node server is running on port 5000
+            const response = await fetch(
+              "http://localhost:5000/api/hackathon/hackathon-register",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                body: JSON.stringify(payload),
+              }
+            );
 
-               if (result.success) {
-    // 🎉 Success Popup (Dark & Stylish)
-    Swal.fire({
-        title: 'Team Registered! 🚀',
-        text: 'Success! Your team has been registered.',
-        icon: 'success',
-        background: '#1e1e2d',  // Dark background color
-        color: '#ffffff',       // White text
-        confirmButtonColor: '#8b5cf6', // Purple button (aapke theme jaisa)
-        confirmButtonText: 'Great!',
-        backdrop: `
+            const result = await response.json();
+
+            if (result.success) {
+              // 🎉 Success Popup (Dark & Stylish)
+              Swal.fire({
+                title: "Team Registered! 🚀",
+                text: "Success! Your team has been registered.",
+                icon: "success",
+                background: "#1e1e2d", // Dark background color
+                color: "#ffffff", // White text
+                confirmButtonColor: "#8b5cf6", // Purple button (aapke theme jaisa)
+                confirmButtonText: "Great!",
+                backdrop: `
             rgba(0,0,123,0.1)
-        `
-    });
+        `,
+              });
 
-    this.reset();
-    updateAllFields(); // Reset dynamic fields
-
-} else {
-    // ⚠️ Error Popup
-    Swal.fire({
-        title: 'Registration Failed',
-        text: result.message,
-        icon: 'error',
-        background: '#1e1e2d',
-        color: '#ffffff',
-        confirmButtonColor: '#ef4444' // Red button
-    });
-}
-} catch (error) {
-    console.error('Error:', error);
-    
-    // 🔌 Network Error Popup
-    Swal.fire({
-        title: 'Connection Error',
-        text: 'Is the backend running? Check port 5000.',
-        icon: 'warning',
-        background: '#1e1e2d',
-        color: '#ffffff',
-        confirmButtonColor: '#f59e0b' // Orange/Yellow button
-    });
-} 
-            finally {
-                // Reset Button
-                submitBtn.disabled = false;
-                btnSpan.innerHTML = originalContent;
+              this.reset();
+              updateAllFields(); // Reset dynamic fields
+            } else {
+              // ⚠️ Error Popup
+              Swal.fire({
+                title: "Registration Failed",
+                text: result.message,
+                icon: "error",
+                background: "#1e1e2d",
+                color: "#ffffff",
+                confirmButtonColor: "#ef4444", // Red button
+              });
             }
+          } catch (error) {
+            console.error("Error:", error);
+
+            // 🔌 Network Error Popup
+            Swal.fire({
+              title: "Connection Error",
+              text: "Is the backend running? Check port 5000.",
+              icon: "warning",
+              background: "#1e1e2d",
+              color: "#ffffff",
+              confirmButtonColor: "#f59e0b", // Orange/Yellow button
+            });
+          } finally {
+            // Reset Button
+            submitBtn.disabled = false;
+            btnSpan.innerHTML = originalContent;
+          }
         });
     </script>
-</body>
+  </body>
 </html>
